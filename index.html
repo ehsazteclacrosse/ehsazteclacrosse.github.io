@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esperanza Women's Lacrosse</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons for links -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        /* --- Custom Styles for a Modern Look --- */
+        :root {
+            --primary-color: #860038; /* New Maroon */
+            --accent-color: #fdba31;  /* New Gold */
+            --accent-hover: #fca510;  /* Darker Gold for hover */
+            --light-gray: #f8f9fa;
+            --dark-text: #212529;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fff;
+            color: var(--dark-text);
+        }
+
+        /* --- Navigation Bar --- */
+        .navbar {
+            background-color: #fff;
+            box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color) !important;
+        }
+
+        .nav-link {
+            color: var(--primary-color) !important;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent-color) !important;
+        }
+
+        /* --- Hero Section --- */
+        .hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('wlax_hero.gif');
+            background-size: cover;
+            background-position: center;
+            /*padding: 5rem 0;*/
+            color: #ffffff;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-end; /* Align content to the bottom */
+            height: 33vh; /* Set a specific height for the hero section to see the alignment */
+            
+        }
+
+        .hero-section img {
+            width: 400px;
+            height: auto;
+        }
+
+
+        /* --- Section Styling --- */
+        section {
+            padding: 5rem 0;
+        }
+
+        section:nth-of-type(odd) {
+             background-color: var(--light-gray);
+        }
+
+        .section-title {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 3rem;
+        }
+
+        /* --- Card Styling --- */
+        .card {
+            border: none;
+            border-radius: 0.75rem;
+            box-shadow: 0 0.5rem 1.5rem rgba(13, 44, 84, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0.75rem 2rem rgba(13, 44, 84, 0.12);
+        }
+
+        .card-title {
+            /*color: var(--dark-text);*/
+            font-weight: 700;
+        }
+
+        /* --- Custom Button Styles --- */
+        .btn-accent {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        .btn-accent:hover {
+            background-color: var(--accent-hover);
+            border-color: var(--accent-hover);
+            color: var(--primary-color);
+        }
+        .btn-outline-accent {
+            color: var(--accent-color);
+            border-color: var(--accent-color);
+            font-weight: 600;
+        }
+        .btn-outline-accent:hover {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+
+        /* YouTube button style */
+        .btn-youtube {
+            background-color: #ff0000;
+            border-color: #ff0000;
+            color: #ffffff;
+            font-weight: 600;
+        }
+        .btn-youtube:hover {
+            background-color: #cc0000;
+            border-color: #cc0000;
+            color: #ffffff;
+        }
+        .btn-youtube.disabled {
+            background-color: #e2e3e5 !important;
+            border-color: #e2e3e5 !important;
+            color: #41464b !important;
+        }
+
+        /* --- Table Styling --- */
+        .table {
+            --bs-table-striped-bg: var(--light-gray);
+            --bs-table-hover-bg: #e9ecef;
+        }
+        
+        .table thead {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        /* Custom Badge Colors */
+        .badge.bg-success-subtle { 
+            background-color: #d4edda !important; 
+            color: #155724 !important; 
+            border-color: #c3e6cb !important; 
+        }
+        .badge.bg-danger-subtle { 
+            background-color: #f1e4e8 !important; 
+            color: var(--primary-color) !important; 
+            border-color: #c6a2b3 !important; 
+        }
+        .badge.bg-secondary-subtle { 
+            background-color: #e2e3e5 !important; 
+            color: #41464b !important; 
+        }
+
+        /* --- Player/Coach Card Enhancements --- */
+        .player-card img, .coach-card img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: -60px auto 1rem;
+            border: 4px solid #fff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .player-card, .coach-card {
+            margin-top: 60px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+        
+        footer a {
+            color: rgba(255, 255, 255, 0.75);
+            transition: color 0.2s;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--accent-color);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                 <img src="esperanza-logo.png" alt="Esperanza Aztecs Lacrosse Team Logo"> Esperanza Women's Lacrosse
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#schedule">Schedule</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#roster">Roster</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#coaches">Coaches</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#support">Support</a></li>
+                </ul>
+                <ul class="navbar-nav flex-row">
+                    <li class="nav-item"><a href="https://instagram.com/ehs_womenslax" target="_blank" class="nav-link social-link mx-2"><i class="bi bi-instagram"></i></a></li>
+                    <li class="nav-item"><a href="https://www.youtube.com/@ehslacrosse" target="_blank" class="nav-link social-link mx-2"><i class="bi bi-youtube"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="container hero-content">
+            <img src="esperanza_aztecs.png" alt="Esperanza Aztecs Lacrosse Team Logo" class="img-fluid my-4">
+        </div>
+    </header>
+
+    <main>
+        <!-- Team Schedule Section -->
+        <section id="schedule">
+            <div class="container">
+                <h2 class="section-title text-center">2025 Team Schedule</h2>
+                <div class="card overflow-hidden">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover align-middle mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="ps-4">Date</th>
+                                    <th scope="col">Opponent</th>
+                                    <th scope="col" class="text-center">Result</th>
+                                    <th scope="col" class="text-center">Game Replay</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="ps-4 fw-bold">February 18, 2025</td>
+                                    <td>@ California</td>
+                                    <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle">W 13-3</span></td>
+                                    <td class="text-center"><a href="https://youtu.be/PVafKdfLc88" target="_blank" class="btn btn-sm btn-youtube"><i class="bi bi-youtube me-1"></i> Watch</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="ps-4 fw-bold">February 25, 2025</td>
+                                    <td>vs. St. Margaret's</td>
+                                    <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-danger-subtle border border-danger-subtle">L 10-20</span></td>
+                                    <td class="text-center"><a href="https://youtu.be/f0-WUQ95iFM" target="_blank" class="btn btn-sm btn-youtube"><i class="bi bi-youtube me-1"></i> Watch</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="ps-4 fw-bold">February 27, 2025</td>
+                                    <td>@ Lakewood</td>
+                                    <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle">W 17-1</span></td>
+                                    <td class="text-center"><a href="https://youtu.be/zXrXOilwegU" target="_blank" class="btn btn-sm btn-youtube"><i class="bi bi-youtube me-1"></i> Watch</a></td>
+				                </tr>
+                                <tr>
+                                    <td class="ps-4 fw-bold">February 28, 2025</td>
+                                    <td>@ Aliso Niguel</td>
+                                    <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-danger-subtle border border-danger-subtle">L 10-19</span></td>
+                                    <td class="text-center"><a href="https://youtu.be/yuTU3fbh184" target="_blank" class="btn btn-sm btn-youtube"><i class="bi bi-youtube me-1"></i> Watch</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="ps-4 fw-bold">March 3, 2025</td>
+                                    <td>vs. El Dorado</td>
+                                    <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-danger-subtle border border-danger-subtle">L 7-22</span></td>
+                                    <td class="text-center"><a href="https://youtu.be/jOn617Y-iBg" target="_blank" class="btn btn-sm btn-youtube"><i class="bi bi-youtube me-1"></i> Watch</a></td>
+				                </tr>
+                                <tr>
+                                    <td class="ps-4 fw-bold">March 7, 2025</td>
+                                    <td>vs. University</td>
+                                    <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-danger-subtle border border-dager-subtle">L 6-9</span></td>
+                                    <td class="text-center"><a href="https://youtu.be/w_u5ystZGuA" target="_blank" class="btn btn-sm btn-youtube"><i class="bi bi-youtube me-1"></i> Watch</a></td>
+				                </tr>
+                                <tr>
+                                    <td class="ps-4 fw-bold">March 11, 2025</td>
+                                    <td>vs. Canyon</td>
+                                    <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-danger-subtle border border-danger-subtle">L 6-14</span></td>
+                                    <td class="text-center"><a href="https://youtu.be/jQV6E2-jXgg" target="_blank" class="btn btn-sm btn-youtube"><i class="bi bi-youtube me-1"></i> Watch</a></td>
+				                </tr>
+                                <tr>
+                                    <td class="ps-4 fw-bold">March 13, 2025</td>
+                                    <td>vs. California</td>
+                                    <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle">W 16-10</span></td>
+                                    <td class="text-center"><a href="https://youtu.be/SzscbwglJso" target="_blank" class="btn btn-sm btn-youtube"><i class="bi bi-youtube me-1"></i> Watch</a></td>
+				                </tr>
+                                <tr>
+                                    <td class="ps-4 fw-bold">March 17, 2025</td>
+                                    <td>vs. King</td>
+                                    <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-danger-subtle border border-danger-subtle">L 2-14</span></td>
+                                    <td class="text-center"><a href="https://youtu.be/zFTvJQlnv7I" target="_blank" class="btn btn-sm btn-youtube"><i class="bi bi-youtube me-1"></i> Watch</a></td>
+				                </tr>
+                                <tr>
+                                    <td class="ps-4 fw-bold">March 19, 2025</td>
+                                    <td>vs. Valencia</td>
+                                    <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle">W 15-4</span></td>
+                                    <td class="text-center"><a href="https://youtu.be/fBVoSHODRAs" target="_blank" class="btn btn-sm btn-youtube"><i class="bi bi-youtube me-1"></i> Watch</a></td>
+				                </tr>
+                                <tr>
+                                    <td class="ps-4 fw-bold">March 25, 2025</td>
+                                    <td>@ Yorba Linda</td>
+                                    <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-danger-subtle border border-danger-subtle">L 11-12</span></td>
+                                    <td class="text-center"><a href="https://youtu.be/jaA84ytmJUQ" target="_blank" class="btn btn-sm btn-youtube"><i class="bi bi-youtube me-1"></i> Watch</a></td>
+				                </tr>
+                                <tr>
+                                    <td class="ps-4 fw-bold">March 27, 2025</td>
+                                    <td>vs. Irvine</td>
+                                    <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle">W 17-6</span></td>
+                                    <td class="text-center"><a href="https://youtu.be/WYyAQ0LOctw" target="_blank" class="btn btn-sm btn-youtube"><i class="bi bi-youtube me-1"></i> Watch</a></td>
+				                </tr>
+                                <tr>
+                                    <td class="ps-4 fw-bold">April 3, 2025</td>
+                                    <td>@ Mission Viejo</td>
+                                    <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle">W 12-11</span></td>
+                                    <td class="text-center"><a href="https://youtu.be/u_SDRQvIgjA" target="_blank" class="btn btn-sm btn-youtube"><i class="bi bi-youtube me-1"></i> Watch</a></td>
+				                </tr>
+                                <tr>
+                                    <td class="ps-4 fw-bold">April 8, 2025</td>
+                                    <td>@ El Modena</td>
+                                    <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle">W 17-5</span></td>
+                                    <td class="text-center"><a href="https://youtu.be/DR5mUtRM7yQ" target="_blank" class="btn btn-sm btn-youtube"><i class="bi bi-youtube me-1"></i> Watch</a></td>
+				                </tr>
+                                <tr>
+                                    <td class="ps-4 fw-bold">April 22, 2025</td>
+                                    <td>@ Foothill</td>
+                                    <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-danger-subtle border border-danger-subtle">L 1-19</span></td>
+                                    <td class="text-center"><a href="#" class="btn btn-sm btn-youtube disabled"><i class="bi bi-youtube me-1"></i> Watch</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="ps-4 fw-bold">May 3, 2025</td>
+                                    <td>vs. Aztec Men - Beauty and the Beast</td>
+                                    <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle">W 9-8</span></td>
+                                    <td class="text-center"><a href="https://youtu.be/43dSLy4d9sE" target="_blank" class="btn btn-sm btn-youtube"><i class="bi bi-youtube me-1"></i> Watch</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Roster Section -->
+        <section id="roster">
+            <div class="container">
+                <h2 class="section-title text-center">Team Roster </h2>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+                    <!-- Player Card Example -->
+                    <div class="col">
+                        <div class="card h-100 text-center player-card pt-4">
+                            <img src="https://placehold.co/200x200/860038/fdba31?text=Senior" alt="Senior">
+                            <div class="card-body">
+                                <h5 class="card-title" >#3 Emily Bean</h5>
+                                <p class="card-text text-muted">Midfield / Attack / Defense</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more player cards by copying the .col div -->
+                    <div class="col">
+                        <div class="card h-100 text-center player-card pt-4">
+                            <img src="https://placehold.co/200x200/860038/fdba31?text=Junior" alt="Junior">
+                            <div class="card-body">
+                                <h5 class="card-title">#4 Maiah Sharma</h5>
+                                <p class="card-text text-muted">Midfield / Attack</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 text-center player-card pt-4">
+                            <img src="https://placehold.co/200x200/860038/fdba31?text=Sophomore" alt="sophomore">
+                            <div class="card-body">
+                                <h5 class="card-title">#5 Cassandra Cruz</h5>
+                                <p class="card-text text-muted">Defense</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 text-center player-card pt-4">
+                            <img src="https://placehold.co/200x200/860038/fdba31?text=Sophomore" alt="sophomore">
+                            <div class="card-body">
+                                <h5 class="card-title">#7 Sharon Nayyer</h5>
+                                <p class="card-text text-muted">Defense</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 text-center player-card pt-4">
+                            <img src="https://placehold.co/200x200/860038/fdba31?text=Sophomore" alt="sophomore">
+                            <div class="card-body">
+                                <h5 class="card-title">#8 Yasmin Espino</h5>
+                                <p class="card-text text-muted">Attack</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 text-center player-card pt-4">
+                            <img src="https://placehold.co/200x200/860038/fdba31?text=Junior" alt="Junior">
+                            <div class="card-body">
+                                <h5 class="card-title">#10 Maxine Trigg</h5>
+                                <p class="card-text text-muted">Midfield / Attack / Defense</p>
+                            </div>
+                        </div>
+                    </div>
+		            <div class="col">
+                        <div class="card h-100 text-center player-card pt-4">
+                            <img src="https://placehold.co/200x200/860038/fdba31?text=Senior" alt="Senior">
+                            <div class="card-body">
+                                <h5 class="card-title">#11 Maddy Tomlin</h5>
+                                <p class="card-text text-muted">Attack</p>
+                            </div>
+                        </div>
+                    </div>
+		            <div class="col">
+                        <div class="card h-100 text-center player-card pt-4">
+                            <img src="https://placehold.co/200x200/860038/fdba31?text=Junior" alt="Junior">
+                            <div class="card-body">
+                                <h5 class="card-title">#13 Scout Garcia</h5>
+                                <p class="card-text text-muted">Midfield / Defense</p>
+                            </div>
+                        </div>
+                    </div>
+		            <div class="col">
+                        <div class="card h-100 text-center player-card pt-4">
+                            <img src="https://placehold.co/200x200/860038/fdba31?text=Junior" alt="Junior">
+                            <div class="card-body">
+                                <h5 class="card-title">#16 Juliana Galante</h5>
+                                <p class="card-text text-muted">Attack</p>
+                            </div>
+                        </div>
+                    </div>
+		            <div class="col">
+                        <div class="card h-100 text-center player-card pt-4">
+                            <img src="https://placehold.co/200x200/860038/fdba31?text=Junior" alt="Freshman">
+                            <div class="card-body">
+                                <h5 class="card-title">#18 Taylor Goo</h5>
+                                <p class="card-text text-muted">Attack</p>
+                            </div>
+                        </div>
+                    </div>
+		            <div class="col">
+                        <div class="card h-100 text-center player-card pt-4">
+                            <img src="https://placehold.co/200x200/860038/fdba31?text=Junior" alt="Junior">
+                            <div class="card-body">
+                                <h5 class="card-title">#21 Addison Waleters</h5>
+                                <p class="card-text text-muted">Midfield / Defense</p>
+                            </div>
+                        </div>
+                    </div>
+		            <div class="col">
+                        <div class="card h-100 text-center player-card pt-4">
+                            <img src="https://placehold.co/200x200/860038/fdba31?text=Sophomore" alt="sophomore">
+                            <div class="card-body">
+                                <h5 class="card-title">#22 Aliyana Escalera</h5>
+                                <p class="card-text text-muted">Attack</p>
+                            </div>
+                        </div>
+                    </div>
+		            <div class="col">
+                        <div class="card h-100 text-center player-card pt-4">
+                            <img src="https://placehold.co/200x200/860038/fdba31?text=Junior" alt="Freshman">
+                            <div class="card-body">
+                                <h5 class="card-title">#23 Naba Raza</h5>
+                                <p class="card-text text-muted">Defense</p>
+                            </div>
+                        </div>
+                    </div>
+		            <div class="col">
+                        <div class="card h-100 text-center player-card pt-4">
+                            <img src="https://placehold.co/200x200/860038/fdba31?text=Senior" alt="Senior">
+                            <div class="card-body">
+                                <h5 class="card-title">#24 Isabella Teran</h5>
+                                <p class="card-text text-muted">Midfield / Attack / Defense</p>
+                            </div>
+                        </div>
+                    </div>
+		            <div class="col">
+                        <div class="card h-100 text-center player-card pt-4">
+                            <img src="https://placehold.co/200x200/860038/fdba31?text=Sophomore" alt="sophomore">
+                            <div class="card-body">
+                                <h5 class="card-title">#34 Olivia Pachon</h5>
+                                <p class="card-text text-muted">Goalie</p>
+                            </div>
+                        </div>
+                    </div>
+		            <div class="col">
+                        <div class="card h-100 text-center player-card pt-4">
+                            <img src="https://placehold.co/200x200/860038/fdba31?text=Senior" alt="Senior">
+                            <div class="card-body">
+                                <h5 class="card-title">#36 Bryce Cryan</h5>
+                                <p class="card-text text-muted">Midfield / Defense</p>
+                            </div>
+                        </div>
+                    </div>
+		            <div class="col">
+                        <div class="card h-100 text-center player-card pt-4">
+                            <img src="https://placehold.co/200x200/860038/fdba31?text=Junior" alt="Junior">
+                            <div class="card-body">
+                                <h5 class="card-title">#37 Sophie Asai</h5>
+                                <p class="card-text text-muted">Defense</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Coaches Section -->
+        <section id="coaches">
+            <div class="container">
+                <h2 class="section-title text-center">Coaches</h2>
+                <div class="row justify-content-center row-cols-1 row-cols-md-2 g-4">
+                    <!-- Coach Card 1 -->
+                    <div class="col-lg-4">
+                        <div class="card h-100 text-center coach-card pt-4">
+                             <img src="https://placehold.co/200x200/666666/ffffff?text=Coach" alt="Coach">
+                            <div class="card-body">
+                                <h5 class="card-title"> Madisyn Scott</h5>
+                                <p class="card-text fw-bold" style="color: var(--accent-color);">Head Coach</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Coach Card 2 -->
+                    <div class="col-lg-4">
+                        <div class="card h-100 text-center coach-card pt-4">
+                            <img src="https://placehold.co/200x200/666666/ffffff?text=Coach" alt="Coach">
+                            <div class="card-body">
+                                <h5 class="card-title">Zachary Brushwyler</h5>
+                                <p class="card-text fw-bold" style="color: var(--accent-color);">Assistant Coach</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Support Our Team Section -->
+        <section id="support">
+            <div class="container">
+                <h2 class="section-title text-center">Support the Aztecs!</h2>
+                <div class="text-center lead mb-5">Your support is vital for our success. It helps cover equipment, travel, and staffing.</div>
+                <div class="row justify-content-center row-cols-1 row-cols-md-2 g-4">
+                    <div class="col-lg-5">
+                        <div class="card h-100 p-4 text-center">
+                            <div class="card-body">
+                                <i class="bi bi-gift-fill fs-1 mb-3" style="color: var(--primary-color);"></i>
+                                <h5 class="card-title">Make a Donation</h5>
+                                <p class="card-text">Every contribution, big or small, makes a huge difference for our players.</p>
+                                <a href="mailto:ehsazteclacrosse@gmail.com" class="btn btn-outline-accent">Inquire About Donations</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="card h-100 p-4 text-center">
+                            <div class="card-body">
+                                <i class="bi bi-people-fill fs-1 mb-3" style="color: var(--primary-color);"></i>
+                                <h5 class="card-title">Become a Sponsor</h5>
+                                <p class="card-text">Promote your business while supporting student-athletes in our community.</p>
+                                <a href="mailto:ehsazteclacrosse@gmail.com" class="btn btn-outline-accent">Inquire About Sponsorship</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container text-center">
+            <div class="mb-4">
+                <a href="https://instagram.com/yourteam" target="_blank" class="fs-4 mx-2"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.youtube.com/@ehslacrosse" target="_blank" class="fs-4 mx-2"><i class="bi bi-youtube"></i></a>
+            </div>
+            <p class="mb-1">© 2025 Esperanza High School Women's Lacrosse. All rights reserved.</p>
+            <p class="mb-0 small">For more information, please contact us at <a href="mailto:ehsazteclacrosse@gmail.com">ehsazteclacrosse@gmail.com</a>.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" xintegrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" xintegrity="sha384-0pUGZvbkm6XF6gxjEnlco4jJ7azgZMz7gM1HceVyaPhMGFjWSjWA7zBfJ8LaX5o9c" crossorigin="anonymous"></script>
+</body>
+</html>
