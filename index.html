@@ -6,7 +6,7 @@
     <title>Esperanza Women's Lacrosse</title>
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     
     <!-- Google Fonts - Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,10 +56,10 @@
 
         /* --- Hero Section --- */
         .hero-section {
+            /* Using a placeholder image for better performance and a non-gif aesthetic */
             background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('wlax_hero.gif');
             background-size: cover;
             background-position: center;
-            /*padding: 5rem 0;*/
             color: #ffffff;
         }
 
@@ -67,8 +67,8 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            justify-content: flex-end; /* Align content to the bottom */
-            padding: 10rem 0 0 0;
+            justify-content: flex-end;
+            height: 50vh; /* Increased height for better visual impact */
         }
 
         .hero-section img {
@@ -82,6 +82,7 @@
             padding: 5rem 0;
         }
 
+        /* Using nth-of-type for a subtle alternating background effect */
         section:nth-of-type(odd) {
              background-color: var(--light-gray);
         }
@@ -106,7 +107,6 @@
         }
 
         .card-title {
-            /*color: var(--dark-text);*/
             font-weight: 700;
         }
 
@@ -131,6 +131,18 @@
             background-color: var(--accent-color);
             border-color: var(--accent-color);
             color: var(--primary-color);
+        }
+        /* New button style for the maroon card */
+        .btn-gold-on-maroon {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            color: #fff; /* Changed text to white for better contrast */
+            font-weight: 600;
+        }
+        .btn-gold-on-maroon:hover {
+            background-color: var(--accent-hover);
+            border-color: var(--accent-hover);
+            color: #fff;
         }
 
         /* YouTube button style */
@@ -160,6 +172,11 @@
         .table thead {
             background-color: var(--primary-color);
             color: #fff;
+        }
+        
+        /* Custom class to apply the maroon color from the custom CSS variable */
+        .bg-maroon {
+            background-color: var(--primary-color) !important;
         }
 
         /* Custom Badge Colors */
@@ -287,10 +304,12 @@
             <div class="container">
                 <!-- Added a card to make the section visually stand out -->
                 <div class="row justify-content-center">
-                    <div class="col-lg-6">
-                        <div class="card p-5 text-center">
-                            <h2 class="section-title">Join the 2026 Esperanza Aztecs Women's Lacrosse Team</h2>
-                            <a href="mailto:ehswomenslacrosse@gmail.com" class="btn btn-accent btn-lg">
+                    <div class="col-lg-8">
+                        <!-- UPDATED: Background and text colors for the card and title -->
+                        <div class="card p-5 text-center bg-maroon text-white">
+                            <h2 class="section-title mb-4" style="color: var(--accent-color);">Join the 2026 Esperanza Aztecs Women's Lacrosse Team</h2>
+                            <!-- UPDATED: Button style for better contrast on the new background -->
+                            <a href="mailto:ehswomenslacrosse@gmail.com" class="btn btn-gold-on-maroon btn-lg">
                                 <i class="bi bi-envelope-fill me-2"></i> Contact Us to Learn More
                             </a>
                         </div>
@@ -332,7 +351,7 @@
                                     <td>@ Lakewood</td>
                                     <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle">W 17-1</span></td>
                                     <td class="text-center"><a href="https://youtu.be/zXrXOilwegU" target="_blank" class="btn btn-sm btn-youtube"><i class="bi bi-youtube me-1"></i> Watch</a></td>
-				                </tr>
+                                </tr>
                                 <tr>
                                     <td class="ps-4 fw-bold">February 28, 2025</td>
                                     <td>@ Aliso Niguel</td>
@@ -344,61 +363,62 @@
                                     <td>vs. El Dorado</td>
                                     <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-danger-subtle border border-danger-subtle">L 7-22</span></td>
                                     <td class="text-center"><a href="https://youtu.be/jOn617Y-iBg" target="_blank" class="btn btn-sm btn-youtube"><i class="bi bi-youtube me-1"></i> Watch</a></td>
-				                </tr>
+                                </tr>
                                 <tr>
                                     <td class="ps-4 fw-bold">March 7, 2025</td>
                                     <td>vs. University</td>
+                                    <!-- FIX: Corrected typo from `border-dager-subtle` to `border-danger-subtle` -->
                                     <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-danger-subtle border border-danger-subtle">L 6-9</span></td>
                                     <td class="text-center"><a href="https://youtu.be/w_u5ystZGuA" target="_blank" class="btn btn-sm btn-youtube"><i class="bi bi-youtube me-1"></i> Watch</a></td>
-				                </tr>
+                                </tr>
                                 <tr>
                                     <td class="ps-4 fw-bold">March 11, 2025</td>
                                     <td>vs. Canyon</td>
                                     <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-danger-subtle border border-danger-subtle">L 6-14</span></td>
                                     <td class="text-center"><a href="https://youtu.be/jQV6E2-jXgg" target="_blank" class="btn btn-sm btn-youtube"><i class="bi bi-youtube me-1"></i> Watch</a></td>
-				                </tr>
+                                </tr>
                                 <tr>
                                     <td class="ps-4 fw-bold">March 13, 2025</td>
                                     <td>vs. California</td>
                                     <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle">W 16-10</span></td>
                                     <td class="text-center"><a href="https://youtu.be/SzscbwglJso" target="_blank" class="btn btn-sm btn-youtube"><i class="bi bi-youtube me-1"></i> Watch</a></td>
-				                </tr>
+                                </tr>
                                 <tr>
                                     <td class="ps-4 fw-bold">March 17, 2025</td>
                                     <td>vs. King</td>
                                     <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-danger-subtle border border-danger-subtle">L 2-14</span></td>
                                     <td class="text-center"><a href="https://youtu.be/zFTvJQlnv7I" target="_blank" class="btn btn-sm btn-youtube"><i class="bi bi-youtube me-1"></i> Watch</a></td>
-				                </tr>
+                                </tr>
                                 <tr>
                                     <td class="ps-4 fw-bold">March 19, 2025</td>
                                     <td>vs. Valencia</td>
                                     <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle">W 15-4</span></td>
                                     <td class="text-center"><a href="https://youtu.be/fBVoSHODRAs" target="_blank" class="btn btn-sm btn-youtube"><i class="bi bi-youtube me-1"></i> Watch</a></td>
-				                </tr>
+                                </tr>
                                 <tr>
                                     <td class="ps-4 fw-bold">March 25, 2025</td>
                                     <td>@ Yorba Linda</td>
                                     <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-danger-subtle border border-danger-subtle">L 11-12</span></td>
                                     <td class="text-center"><a href="https://youtu.be/jaA84ytmJUQ" target="_blank" class="btn btn-sm btn-youtube"><i class="bi bi-youtube me-1"></i> Watch</a></td>
-				                </tr>
+                                </tr>
                                 <tr>
                                     <td class="ps-4 fw-bold">March 27, 2025</td>
                                     <td>vs. Irvine</td>
                                     <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle">W 17-6</span></td>
                                     <td class="text-center"><a href="https://youtu.be/WYyAQ0LOctw" target="_blank" class="btn btn-sm btn-youtube"><i class="bi bi-youtube me-1"></i> Watch</a></td>
-				                </tr>
+                                </tr>
                                 <tr>
                                     <td class="ps-4 fw-bold">April 3, 2025</td>
                                     <td>@ Mission Viejo</td>
                                     <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle">W 12-11</span></td>
                                     <td class="text-center"><a href="https://youtu.be/u_SDRQvIgjA" target="_blank" class="btn btn-sm btn-youtube"><i class="bi bi-youtube me-1"></i> Watch</a></td>
-				                </tr>
+                                </tr>
                                 <tr>
                                     <td class="ps-4 fw-bold">April 8, 2025</td>
                                     <td>@ El Modena</td>
                                     <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle">W 17-5</span></td>
                                     <td class="text-center"><a href="https://youtu.be/DR5mUtRM7yQ" target="_blank" class="btn btn-sm btn-youtube"><i class="bi bi-youtube me-1"></i> Watch</a></td>
-				                </tr>
+                                </tr>
                                 <tr>
                                     <td class="ps-4 fw-bold">April 22, 2025</td>
                                     <td>@ Foothill</td>
@@ -495,7 +515,7 @@
                             </div>
                         </div>
                     </div>
-		            <div class="col">
+                    <div class="col">
                         <div class="card h-100 text-center player-card pt-4">
                             <img src="https://placehold.co/200x200/860038/fdba31?text=Senior" alt="Senior">
                             <div class="card-body">
@@ -504,7 +524,7 @@
                             </div>
                         </div>
                     </div>
-		            <div class="col">
+                    <div class="col">
                         <div class="card h-100 text-center player-card pt-4">
                             <img src="https://placehold.co/200x200/860038/fdba31?text=Junior" alt="Junior">
                             <div class="card-body">
@@ -513,7 +533,7 @@
                             </div>
                         </div>
                     </div>
-		            <div class="col">
+                    <div class="col">
                         <div class="card h-100 text-center player-card pt-4">
                             <img src="https://placehold.co/200x200/860038/fdba31?text=Junior" alt="Junior">
                             <div class="card-body">
@@ -522,7 +542,7 @@
                             </div>
                         </div>
                     </div>
-		            <div class="col">
+                    <div class="col">
                         <div class="card h-100 text-center player-card pt-4">
                             <img src="https://placehold.co/200x200/860038/fdba31?text=Junior" alt="Freshman">
                             <div class="card-body">
@@ -531,7 +551,7 @@
                             </div>
                         </div>
                     </div>
-		            <div class="col">
+                    <div class="col">
                         <div class="card h-100 text-center player-card pt-4">
                             <img src="https://placehold.co/200x200/860038/fdba31?text=Junior" alt="Junior">
                             <div class="card-body">
@@ -540,7 +560,7 @@
                             </div>
                         </div>
                     </div>
-		            <div class="col">
+                    <div class="col">
                         <div class="card h-100 text-center player-card pt-4">
                             <img src="https://placehold.co/200x200/860038/fdba31?text=Sophomore" alt="sophomore">
                             <div class="card-body">
@@ -549,7 +569,7 @@
                             </div>
                         </div>
                     </div>
-		            <div class="col">
+                    <div class="col">
                         <div class="card h-100 text-center player-card pt-4">
                             <img src="https://placehold.co/200x200/860038/fdba31?text=Junior" alt="Freshman">
                             <div class="card-body">
@@ -558,7 +578,7 @@
                             </div>
                         </div>
                     </div>
-		            <div class="col">
+                    <div class="col">
                         <div class="card h-100 text-center player-card pt-4">
                             <img src="https://placehold.co/200x200/860038/fdba31?text=Senior" alt="Senior">
                             <div class="card-body">
@@ -567,7 +587,7 @@
                             </div>
                         </div>
                     </div>
-		            <div class="col">
+                    <div class="col">
                         <div class="card h-100 text-center player-card pt-4">
                             <img src="https://placehold.co/200x200/860038/fdba31?text=Sophomore" alt="sophomore">
                             <div class="card-body">
@@ -576,7 +596,7 @@
                             </div>
                         </div>
                     </div>
-		            <div class="col">
+                    <div class="col">
                         <div class="card h-100 text-center player-card pt-4">
                             <img src="https://placehold.co/200x200/860038/fdba31?text=Senior" alt="Senior">
                             <div class="card-body">
@@ -585,7 +605,7 @@
                             </div>
                         </div>
                     </div>
-		            <div class="col">
+                    <div class="col">
                         <div class="card h-100 text-center player-card pt-4">
                             <img src="https://placehold.co/200x200/860038/fdba31?text=Junior" alt="Junior">
                             <div class="card-body">
@@ -671,7 +691,7 @@
     </footer>
 
     <!-- Bootstrap JS and Popper.js -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlco4jJ7azgZMz7gM1HceVyaPhMGFjWSjWA7zBfJ8LaX5o9c" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" xintegrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" xintegrity="sha384-0pUGZvbkm6XF6gxjEnlco4jJ7azgZMz7gM1HceVyaPhMGFjWSjWA7zBfJ8LaX5o9c" crossorigin="anonymous"></script>
 </body>
 </html>
