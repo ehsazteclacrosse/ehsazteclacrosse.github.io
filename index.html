@@ -194,6 +194,43 @@
             margin-top: 60px;
         }
 
+        .socials-btn {
+            font-size: 1.25rem;
+            padding: 0.75rem 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .socials-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+        }
+        
+        .btn-youtube-social {
+            background-color: #ff0000;
+            border-color: #ff0000;
+            color: #fff;
+        }
+        
+        .btn-youtube-social:hover {
+            background-color: #cc0000;
+            border-color: #cc0000;
+            color: #fff;
+        }
+        
+        .btn-instagram-social {
+            background: #f09433; 
+            background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+            background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+            color: #fff;
+            border: none;
+        }
+        
+        .btn-instagram-social:hover {
+            opacity: 0.9;
+            color: #fff;
+        }
+
         /* --- Footer --- */
         footer {
             background-color: var(--primary-color);
@@ -246,6 +283,16 @@
     </header>
 
     <main>
+        <!-- Join Us Section -->
+        <section id="join-us">
+            <div class="container text-center">
+                <h2 class="section-title">Join the 2026 Esperanza Aztecs Women's Lacrosse Team</h2>
+                <a href="mailto:ehswomenslacrosse@gmail.com" class="btn btn-accent btn-lg">
+                    <i class="bi bi-envelope-fill me-2"></i> Contact Us to Learn More
+                </a>
+            </div>
+        </section>
+
         <!-- Team Schedule Section -->
         <section id="schedule">
             <div class="container">
@@ -361,6 +408,22 @@
                             </tbody>
                         </table>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Socials Section -->
+        <section id="socials">
+            <div class="container text-center">
+                <h2 class="section-title">Follow Us!</h2>
+                <div class="lead mb-4">Stay up-to-date with the latest scores, highlights, and team news.</div>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="https://www.youtube.com/@ehslacrosse" target="_blank" class="btn socials-btn btn-youtube-social">
+                        <i class="bi bi-youtube me-2"></i> YouTube
+                    </a>
+                    <a href="https://instagram.com/ehs_womenslax" target="_blank" class="btn socials-btn btn-instagram-social">
+                        <i class="bi bi-instagram me-2"></i> Instagram
+                    </a>
                 </div>
             </div>
         </section>
@@ -570,7 +633,7 @@
                                 <i class="bi bi-gift-fill fs-1 mb-3" style="color: var(--primary-color);"></i>
                                 <h5 class="card-title">Make a Donation</h5>
                                 <p class="card-text">Every contribution, big or small, makes a huge difference for our players.</p>
-                                <a href="mailto:ehsazteclacrosse@gmail.com" class="btn btn-outline-accent">Inquire About Donations</a>
+                                <a href="mailto:ehswomenslacrosse@gmail.com" class="btn btn-outline-accent">Inquire About Donations</a>
                             </div>
                         </div>
                     </div>
@@ -580,7 +643,7 @@
                                 <i class="bi bi-people-fill fs-1 mb-3" style="color: var(--primary-color);"></i>
                                 <h5 class="card-title">Become a Sponsor</h5>
                                 <p class="card-text">Promote your business while supporting student-athletes in our community.</p>
-                                <a href="mailto:ehsazteclacrosse@gmail.com" class="btn btn-outline-accent">Inquire About Sponsorship</a>
+                                <a href="mailto:ehswomenslacrosse@gmail.com" class="btn btn-outline-accent">Inquire About Sponsorship</a>
                             </div>
                         </div>
                     </div>
@@ -593,11 +656,11 @@
     <footer class="py-5">
         <div class="container text-center">
             <div class="mb-4">
-                <a href="https://instagram.com/yourteam" target="_blank" class="fs-4 mx-2"><i class="bi bi-instagram"></i></a>
+                <a href="https://instagram.com/ehs_womenslax" target="_blank" class="fs-4 mx-2"><i class="bi bi-instagram"></i></a>
                 <a href="https://www.youtube.com/@ehslacrosse" target="_blank" class="fs-4 mx-2"><i class="bi bi-youtube"></i></a>
             </div>
             <p class="mb-1">© 2025 Esperanza High School Women's Lacrosse. All rights reserved.</p>
-            <p class="mb-0 small">For more information, please contact us at <a href="mailto:ehsazteclacrosse@gmail.com">ehsazteclacrosse@gmail.com</a>.</p>
+            <p class="mb-0 small">For more information, please contact us at <a href="mailto:ehswomenslacrosse@gmail.com">ehswomenslacrosse@gmail.com</a>.</p>
         </div>
     </footer>
 
