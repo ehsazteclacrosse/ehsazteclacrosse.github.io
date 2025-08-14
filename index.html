@@ -56,11 +56,11 @@
 
         /* --- Hero Section --- */
         .hero-section {
-            /* Using a placeholder image for better performance and a non-gif aesthetic */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('wlax_hero.gif');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('wlax_hero_init.jpg');
             background-size: cover;
             background-position: center;
             color: #ffffff;
+            transition: background-image 0.5s ease-in-out; /* Add a smooth transition for the image change */
         }
 
         .hero-content {
@@ -84,7 +84,7 @@
 
         /* Using nth-of-type for a subtle alternating background effect */
         section:nth-of-type(odd) {
-             background-color: var(--light-gray);
+              background-color: var(--light-gray);
         }
 
         .section-title {
@@ -555,7 +555,7 @@
                         <div class="card h-100 text-center player-card pt-4">
                             <img src="https://placehold.co/200x200/860038/fdba31?text=Junior" alt="Junior">
                             <div class="card-body">
-                                <h5 class="card-title">#21 Addison Waleters</h5>
+                                <h5 class="card-title">#21 Addison Walters</h5>
                                 <p class="card-text text-muted">Midfield / Defense</p>
                             </div>
                         </div>
@@ -693,5 +693,29 @@
     <!-- Bootstrap JS and Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" xintegrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" xintegrity="sha384-0pUGZvbkm6XF6gxjEnlco4jJ7azgZMz7gM1HceVyaPhMGFjWSjWA7zBfJ8LaX5o9c" crossorigin="anonymous"></script>
+    
+    <!-- Custom script for lazy loading the hero background image -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const heroSection = document.querySelector('.hero-section');
+            const highResImage = new Image();
+            // UPDATED: Using a placeholder for the high-res image to simulate the loading
+            //const highResImageUrl = 'wlax_hero.gif';
+            const highResImageUrl = 'wlax_hero.gif';
+            highResImage.src = highResImageUrl;
+
+            // When the high-resolution image has finished loading
+            highResImage.onload = () => {
+                // Change the background image of the hero section
+                heroSection.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${highResImageUrl}')`;
+                console.log('High-resolution hero background image loaded.');
+            };
+
+            // Handle potential errors if the high-res image fails to load
+            highResImage.onerror = () => {
+                console.error('Failed to load high-resolution hero background image.');
+            };
+        });
+    </script>
 </body>
 </html>
