@@ -299,6 +299,49 @@
             color: var(--accent-color);
         }
 
+        @media (max-width: 767.98px) {
+            /* Hide the table header */
+            .table thead {
+                display: none;
+            }
+
+            .table, .table tbody, .table tr, .table td {
+                display: block;
+                width: 100%;
+            }
+
+            .table tr {
+                margin-bottom: 1rem;
+                border: 1px solid #dee2e6;
+                border-radius: 0.5rem;
+                padding: 0.5rem;
+                background-color: #fff;
+            }
+
+            .table td {
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+                border: none;
+                border-bottom: 1px solid #eee;
+            }
+
+            .table td:last-child {
+                border-bottom: 0;
+            }
+
+            /* Add the labels back in using pseudo-elements */
+            .table td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 1rem;
+                width: 45%;
+                font-weight: bold;
+                text-align: left;
+                color: var(--primary-color);
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -376,112 +419,112 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td class="ps-4 fw-bold">February 19, 2026</td>
-                                    <td>vs. Aliso Niguel </td>
-                                    <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle"></span></td>
-                                    <td class="text-center"><a href="#" class="btn btn-sm btn-youtube disabled"><i class="bi bi-youtube me-1"></i> Watch</a></td>
+                                    <td class="ps-4 fw-bold" data-label="Date">February 19, 2026</td>
+                                    <td data-label="Opponent">vs. Aliso Niguel </td>
+                                    <td class="text-center" data-label="Result"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle"></span></td>
+                                    <td class="text-center" data-label="Game Replay"><a href="#" class="btn btn-sm btn-youtube disabled"><i class="bi bi-youtube me-1"></i> Watch</a></td>
                                 </tr>
                                 <tr>
-                                    <td class="ps-4 fw-bold">February 24, 2026</td>
-                                    <td>@ Laguna Beach</td>
-                                    <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle"></span></td>
-                                    <td class="text-center"><a href="#" class="btn btn-sm btn-youtube disabled"><i class="bi bi-youtube me-1"></i> Watch</a></td>
+                                    <td class="ps-4 fw-bold" data-label="Date">February 24, 2026</td>
+                                    <td data-label="Opponent">@ Laguna Beach</td>
+                                    <td class="text-center" data-label="Result"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle"></span></td>
+                                    <td class="text-center" data-label="Game Replay"><a href="#" class="btn btn-sm btn-youtube disabled"><i class="bi bi-youtube me-1"></i> Watch</a></td>
                                 </tr>
                                 <tr>
-                                    <td class="ps-4 fw-bold">February 26, 2026</td>
-                                    <td>vs. Portola</td>
-                                    <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle"></span></td>
-                                    <td class="text-center"><a href="#" class="btn btn-sm btn-youtube disabled"><i class="bi bi-youtube me-1"></i> Watch</a></td>
+                                    <td class="ps-4 fw-bold" data-label="Date">February 26, 2026</td>
+                                    <td data-label="Opponent">vs. Portola</td>
+                                    <td class="text-center" data-label="Result"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle"></span></td>
+                                    <td class="text-center" data-label="Game Replay"><a href="#" class="btn btn-sm btn-youtube disabled"><i class="bi bi-youtube me-1"></i> Watch</a></td>
                                 </tr>
                                 <tr>
-                                    <td class="ps-4 fw-bold">March 3, 2026</td>
-                                    <td>@ Woodbridge</td>
-                                    <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle"></span></td>
-                                    <td class="text-center"><a href="#" class="btn btn-sm btn-youtube disabled"><i class="bi bi-youtube me-1"></i> Watch</a></td>
+                                    <td class="ps-4 fw-bold" data-label="Date">March 3, 2026</td>
+                                    <td data-label="Opponent">@ Woodbridge</td>
+                                    <td class="text-center" data-label="Result"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle"></span></td>
+                                    <td class="text-center" data-label="Game Replay"><a href="#" class="btn btn-sm btn-youtube disabled"><i class="bi bi-youtube me-1"></i> Watch</a></td>
                                 </tr>
                                 <tr>
-                                    <td class="ps-4 fw-bold">March 5, 2026</td>
-                                    <td>vs. St. Margaret's Episcopal</td>
-                                    <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle"></span></td>
-                                    <td class="text-center"><a href="#" class="btn btn-sm btn-youtube disabled"><i class="bi bi-youtube me-1"></i> Watch</a></td>
+                                    <td class="ps-4 fw-bold" data-label="Date">March 5, 2026</td>
+                                    <td data-label="Opponent">vs. St. Margaret's Episcopal</td>
+                                    <td class="text-center" data-label="Result"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle"></span></td>
+                                    <td class="text-center" data-label="Game Replay"><a href="#" class="btn btn-sm btn-youtube disabled"><i class="bi bi-youtube me-1"></i> Watch</a></td>
                                 </tr>
                                 <tr>
-                                    <td class="ps-4 fw-bold">March 10, 2026</td>
-                                    <td>@ Foothill/Santa Ana</td>
-                                    <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle"></span></td>
-                                    <td class="text-center"><a href="#" class="btn btn-sm btn-youtube disabled"><i class="bi bi-youtube me-1"></i> Watch</a></td>
+                                    <td class="ps-4 fw-bold" data-label="Date">March 10, 2026</td>
+                                    <td data-label="Opponent">@ Foothill/Santa Ana</td>
+                                    <td class="text-center" data-label="Result"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle"></span></td>
+                                    <td class="text-center" data-label="Game Replay"><a href="#" class="btn btn-sm btn-youtube disabled"><i class="bi bi-youtube me-1"></i> Watch</a></td>
                                 </tr>
                                 <tr>
-                                    <td class="ps-4 fw-bold">March 13, 2026</td>
-                                    <td>vs. Mission Viejo</td>
-                                    <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle"></span></td>
-                                    <td class="text-center"><a href="#" class="btn btn-sm btn-youtube disabled"><i class="bi bi-youtube me-1"></i> Watch</a></td>
+                                    <td class="ps-4 fw-bold" data-label="Date">March 13, 2026</td>
+                                    <td data-label="Opponent">vs. Mission Viejo</td>
+                                    <td class="text-center" data-label="Result"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle"></span></td>
+                                    <td class="text-center" data-label="Game Replay"><a href="#" class="btn btn-sm btn-youtube disabled"><i class="bi bi-youtube me-1"></i> Watch</a></td>
                                 </tr>
                                 <tr>
-                                    <td class="ps-4 fw-bold">March 14, 2026</td>
-                                    <td>LA-OC Shootout @ Laguna Hills HS</td>
-                                    <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle"></span></td>
-                                    <td class="text-center"><a href="#" class="btn btn-sm btn-youtube disabled"><i class="bi bi-youtube me-1"></i> Watch</a></td>
+                                    <td class="ps-4 fw-bold" data-label="Date">March 14, 2026</td>
+                                    <td data-label="Opponent">LA-OC Shootout @ Laguna Hills HS</td>
+                                    <td class="text-center" data-label="Result"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle"></span></td>
+                                    <td class="text-center" data-label="Game Replay"><a href="#" class="btn btn-sm btn-youtube disabled"><i class="bi bi-youtube me-1"></i> Watch</a></td>
                                 </tr>
                                 <tr>
-                                    <td class="ps-4 fw-bold">March 17, 2026</td>
-                                    <td>@ El Dorado</td>
-                                    <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle"></span></td>
-                                    <td class="text-center"><a href="#" class="btn btn-sm btn-youtube disabled"><i class="bi bi-youtube me-1"></i> Watch</a></td>
+                                    <td class="ps-4 fw-bold" data-label="Date">March 17, 2026</td>
+                                    <td data-label="Opponent">@ El Dorado</td>
+                                    <td class="text-center" data-label="Result"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle"></span></td>
+                                    <td class="text-center" data-label="Game Replay"><a href="#" class="btn btn-sm btn-youtube disabled"><i class="bi bi-youtube me-1"></i> Watch</a></td>
                                 </tr>
                                 <tr>
-                                    <td class="ps-4 fw-bold">March 19, 2026</td>
-                                    <td>vs. Irvine</td>
-                                    <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle"></span></td>
-                                    <td class="text-center"><a href="#" class="btn btn-sm btn-youtube disabled"><i class="bi bi-youtube me-1"></i> Watch</a></td>
+                                    <td class="ps-4 fw-bold" data-label="Date">March 19, 2026</td>
+                                    <td data-label="Opponent">vs. Irvine</td>
+                                    <td class="text-center" data-label="Result"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle"></span></td>
+                                    <td class="text-center" data-label="Game Replay"><a href="#" class="btn btn-sm btn-youtube disabled"><i class="bi bi-youtube me-1"></i> Watch</a></td>
                                 </tr>
                                 <tr>
-                                    <td class="ps-4 fw-bold">March 27, 2026</td>
-                                    <td>@ Canyon/Anaheim</td>
-                                    <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle"></span></td>
-                                    <td class="text-center"><a href="#" class="btn btn-sm btn-youtube disabled"><i class="bi bi-youtube me-1"></i> Watch</a></td>
+                                    <td class="ps-4 fw-bold" data-label="Date">March 27, 2026</td>
+                                    <td data-label="Opponent">@ Canyon/Anaheim</td>
+                                    <td class="text-center" data-label="Result"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle"></span></td>
+                                    <td class="text-center" data-label="Game Replay"><a href="#" class="btn btn-sm btn-youtube disabled"><i class="bi bi-youtube me-1"></i> Watch</a></td>
                                 </tr>
                                 <tr>
-                                    <td class="ps-4 fw-bold">March 25, 2026</td>
-                                    <td>vs. Valencia/Placentia</td>
-                                    <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle"></span></td>
-                                    <td class="text-center"><a href="#" class="btn btn-sm btn-youtube disabled"><i class="bi bi-youtube me-1"></i> Watch</a></td>
+                                    <td class="ps-4 fw-bold" data-label="Date">March 25, 2026</td>
+                                    <td data-label="Opponent">vs. Valencia/Placentia</td>
+                                    <td class="text-center" data-label="Result"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle"></span></td>
+                                    <td class="text-center" data-label="Game Replay"><a href="#" class="btn btn-sm btn-youtube disabled"><i class="bi bi-youtube me-1"></i> Watch</a></td>
                                 </tr>
                                 <tr>
-                                    <td class="ps-4 fw-bold">March 31, 2026</td>
-                                    <td>@ California</td>
-                                    <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle"></span></td>
-                                    <td class="text-center"><a href="#" class="btn btn-sm btn-youtube disabled"><i class="bi bi-youtube me-1"></i> Watch</a></td>
+                                    <td class="ps-4 fw-bold" data-label="Date">March 31, 2026</td>
+                                    <td data-label="Opponent">@ California</td>
+                                    <td class="text-center" data-label="Result"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle"></span></td>
+                                    <td class="text-center" data-label="Game Replay"><a href="#" class="btn btn-sm btn-youtube disabled"><i class="bi bi-youtube me-1"></i> Watch</a></td>
                                 </tr>
                                 <tr>
-                                    <td class="ps-4 fw-bold">April 2, 2026</td>
-                                    <td>@ Trabuco Hills</td>
-                                    <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle"></span></td>
-                                    <td class="text-center"><a href="#" class="btn btn-sm btn-youtube disabled"><i class="bi bi-youtube me-1"></i> Watch</a></td>
+                                    <td class="ps-4 fw-bold" data-label="Date">April 2, 2026</td>
+                                    <td data-label="Opponent">@ Trabuco Hills</td>
+                                    <td class="text-center" data-label="Result"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle"></span></td>
+                                    <td class="text-center" data-label="Game Replay"><a href="#" class="btn btn-sm btn-youtube disabled"><i class="bi bi-youtube me-1"></i> Watch</a></td>
                                 </tr>
                                 <tr>
-                                    <td class="ps-4 fw-bold">April 14, 2026</td>
-                                    <td>vs. Yorba Linda</td>
-                                    <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle"></span></td>
-                                    <td class="text-center"><a href="#" class="btn btn-sm btn-youtube disabled"><i class="bi bi-youtube me-1"></i> Watch</a></td>
+                                    <td class="ps-4 fw-bold" data-label="Date">April 14, 2026</td>
+                                    <td data-label="Opponent">vs. Yorba Linda</td>
+                                    <td class="text-center" data-label="Result"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle"></span></td>
+                                    <td class="text-center" data-label="Game Replay"><a href="#" class="btn btn-sm btn-youtube disabled"><i class="bi bi-youtube me-1"></i> Watch</a></td>
                                 </tr>
                                 <tr>
-                                    <td class="ps-4 fw-bold">April 16, 2026</td>
-                                    <td>vs. Northwood</td>
-                                    <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle"></span></td>
-                                    <td class="text-center"><a href="#" class="btn btn-sm btn-youtube disabled"><i class="bi bi-youtube me-1"></i> Watch</a></td>
+                                    <td class="ps-4 fw-bold" data-label="Date">April 16, 2026</td>
+                                    <td data-label="Opponent">vs. Northwood</td>
+                                    <td class="text-center" data-label="Result"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle"></span></td>
+                                    <td class="text-center" data-label="Game Replay"><a href="#" class="btn btn-sm btn-youtube disabled"><i class="bi bi-youtube me-1"></i> Watch</a></td>
                                 </tr>
                                 <tr>
-                                    <td class="ps-4 fw-bold">April 20, 2026</td>
-                                    <td>vs. El Modena (Senior Night)</td>
-                                    <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle"></span></td>
-                                    <td class="text-center"><a href="#" class="btn btn-sm btn-youtube disabled"><i class="bi bi-youtube me-1"></i> Watch</a></td>
+                                    <td class="ps-4 fw-bold" data-label="Date">April 20, 2026</td>
+                                    <td data-label="Opponent">vs. El Modena (Senior Night)</td>
+                                    <td class="text-center" data-label="Result"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle"></span></td>
+                                    <td class="text-center" data-label="Game Replay"><a href="#" class="btn btn-sm btn-youtube disabled"><i class="bi bi-youtube me-1"></i> Watch</a></td>
                                 </tr>
                                 <tr>
-                                    <td class="ps-4 fw-bold">May 5, 2026</td>
-                                    <td>vs. Aztec Men - Beauty & Beast Game</td>
-                                    <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle"></span></td>
-                                    <td class="text-center"><a href="#" class="btn btn-sm btn-youtube disabled"><i class="bi bi-youtube me-1"></i> Watch</a></td>
+                                    <td class="ps-4 fw-bold" data-label="Date">May 5, 2026</td>
+                                    <td data-label="Opponent">vs. Aztec Men - Beauty & Beast Game</td>
+                                    <td class="text-center" data-label="Result"><span class="badge fs-6 fw-semibold rounded-pill bg-success-subtle border border-success-subtle"></span></td>
+                                    <td class="text-center" data-label="Game Replay"><a href="#" class="btn btn-sm btn-youtube disabled"><i class="bi bi-youtube me-1"></i> Watch</a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -490,16 +533,21 @@
             </div>
         </section>
 
-        <section id="archives" class="py-4">
+        <section id="archives" class="py-5">
             <div class="container text-center">
                 <h2 class="section-title mb-3">Looking for last season?</h2>
-                <p class="lead mb-4">Relive the action - the fastest, fiercest, and most unforgettable moments from the 2025 Eperanza Aztec Women's lacrosse season!</p>
-                <a href="#" data-bs-toggle="modal" data-bs-target="#schedule2025Modal" class="btn btn-lg btn-youtube">
-                    <i class="bi bi-clock-history me-2"></i> 2025 Game Replays
-                </a>
-                <a href="https://youtu.be/QlvlRJf1pFQ" target="_blank" class="btn btn-lg btn-youtube">
-                    <i class="bi bi-play-circle-fill me-2"></i> 2025 Highlights
-                </a>
+                <p class="lead mb-4 mx-auto" style="max-width: 800px;">
+                    Relive the action - the fastest, fiercest, and most unforgettable moments from the 2025 Esperanza Aztec Women's lacrosse season!
+                </p>
+                
+                <div class="d-grid d-md-flex justify-content-md-center gap-3">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#schedule2025Modal" class="btn btn-lg btn-youtube">
+                        <i class="bi bi-clock-history me-2"></i> 2025 Game Replays
+                    </a>
+                    <a href="https://youtu.be/QlvlRJf1pFQ" target="_blank" class="btn btn-lg btn-youtube">
+                        <i class="bi bi-play-circle-fill me-2"></i> 2025 Highlights
+                    </a>
+                </div>
             </div>
         </section>
 
