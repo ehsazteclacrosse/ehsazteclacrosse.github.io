@@ -73,7 +73,6 @@
             height: 100%;
             object-fit: cover; /* This is the magic line that prevents tiling/multiple videos */
             z-index: -1;
-            filter: brightness(0.5) grayscale(0.0);
         }
 
         /* Re-applying your Maroon/Dark Overlay */
@@ -84,7 +83,6 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(134, 0, 56, 0.1);
             z-index: 1;
         }
 
@@ -298,50 +296,6 @@
         footer a:hover {
             color: var(--accent-color);
         }
-
-        @media (max-width: 767.98px) {
-            /* Hide the table header */
-            .table thead {
-                display: none;
-            }
-
-            .table, .table tbody, .table tr, .table td {
-                display: block;
-                width: 100%;
-            }
-
-            .table tr {
-                margin-bottom: 1rem;
-                border: 1px solid #dee2e6;
-                border-radius: 0.5rem;
-                padding: 0.5rem;
-                background-color: #fff;
-            }
-
-            .table td {
-                text-align: right;
-                padding-left: 50%;
-                position: relative;
-                border: none;
-                border-bottom: 1px solid #eee;
-            }
-
-            .table td:last-child {
-                border-bottom: 0;
-            }
-
-            /* Add the labels back in using pseudo-elements */
-            .table td::before {
-                content: attr(data-label);
-                position: absolute;
-                left: 1rem;
-                width: 45%;
-                font-weight: bold;
-                text-align: left;
-                color: var(--primary-color);
-            }
-        }
-
     </style>
 </head>
 <body>
@@ -752,9 +706,9 @@
                     </div>
                     <div class="col">
                         <div class="card h-100 text-center player-card pt-4">
-                            <img src="https://placehold.co/200x200/860038/fdba31?text=Junior" alt="Junior">
+                            <img src="https://placehold.co/200x200/860038/fdba31?text=Senior" alt="Senior">
                             <div class="card-body">
-                                <h5 class="card-title">#5 Cassandra Cruz</h5>
+                                <h5 class="card-title">#6 Sophie Asai</h5>
                                 <p class="card-text text-muted">Defense</p>
                             </div>
                         </div>
@@ -763,7 +717,25 @@
                         <div class="card h-100 text-center player-card pt-4">
                             <img src="https://placehold.co/200x200/860038/fdba31?text=Senior" alt="Senior">
                             <div class="card-body">
-                                <h5 class="card-title">#6 Sophie Asai</h5>
+                                <h5 class="card-title">#11 Addison Walters</h5>
+                                <p class="card-text text-muted">Midfield / Defense</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 text-center player-card pt-4">
+                            <img src="https://placehold.co/200x200/860038/fdba31?text=Senior" alt="Senior">
+                            <div class="card-body">
+                                <h5 class="card-title">#28 Farida Abbis</h5>
+                                <p class="card-text text-muted">Goalie</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 text-center player-card pt-4">
+                            <img src="https://placehold.co/200x200/860038/fdba31?text=Junior" alt="Junior">
+                            <div class="card-body">
+                                <h5 class="card-title">#5 Cassandra Cruz</h5>
                                 <p class="card-text text-muted">Defense</p>
                             </div>
                         </div>
@@ -776,7 +748,69 @@
                                 <p class="card-text text-muted">Defense</p>
                             </div>
                         </div>
-                    </div> 
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 text-center player-card pt-4">
+                            <img src="https://placehold.co/200x200/860038/fdba31?text=Junior" alt="Junior">
+                            <div class="card-body">
+                                <h5 class="card-title">#12 Aliyana Escalera</h5>
+                                <p class="card-text text-muted">Attack</p>
+                            </div>
+                        </div>
+                    </div><div class="col">
+                        <div class="card h-100 text-center player-card pt-4">
+                            <img src="https://placehold.co/200x200/860038/fdba31?text=Junior" alt="Junior">
+                            <div class="card-body">
+                                <h5 class="card-title">#23 Melanie Rodriguez</h5>
+                                <p class="card-text text-muted">Defense</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 text-center player-card pt-4">
+                            <img src="https://placehold.co/200x200/860038/fdba31?text=Junior" alt="Junior">
+                            <div class="card-body">
+                                <h5 class="card-title">#27 Olivia Pachon</h5>
+                                <p class="card-text text-muted">Goalie</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 text-center player-card pt-4">
+                            <img src="https://placehold.co/200x200/860038/fdba31?text=Sophomore" alt="Sophomore">
+                            <div class="card-body">
+                                <h5 class="card-title">#13 Piper Agee</h5>
+                                <p class="card-text text-muted">Defense</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 text-center player-card pt-4">
+                            <img src="https://placehold.co/200x200/860038/fdba31?text=Sophomore" alt="Sophomore">
+                            <div class="card-body">
+                                <h5 class="card-title">#17 Sariyah Cazessus</h5>
+                                <p class="card-text text-muted">Attack</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 text-center player-card pt-4">
+                            <img src="https://placehold.co/200x200/860038/fdba31?text=Sophomore" alt="Sophomore">
+                            <div class="card-body">
+                                <h5 class="card-title">#18 Taylor Goo</h5>
+                                <p class="card-text text-muted">Midfield / Attack</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 text-center player-card pt-4">
+                            <img src="https://placehold.co/200x200/860038/fdba31?text=Sophomore" alt="Sophomore">
+                            <div class="card-body">
+                                <h5 class="card-title">#21 Naba Raza</h5>
+                                <p class="card-text text-muted">Goalie</p>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col">
                         <div class="card h-100 text-center player-card pt-4">
                             <img src="https://placehold.co/200x200/860038/fdba31?text=Freshman" alt="Freshman">
@@ -797,66 +831,10 @@
                     </div>
                     <div class="col">
                         <div class="card h-100 text-center player-card pt-4">
-                            <img src="https://placehold.co/200x200/860038/fdba31?text=Senior" alt="Senior">
-                            <div class="card-body">
-                                <h5 class="card-title">#11 Addison Walters</h5>
-                                <p class="card-text text-muted">Midfield / Defense</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100 text-center player-card pt-4">
-                            <img src="https://placehold.co/200x200/860038/fdba31?text=Junior" alt="Junior">
-                            <div class="card-body">
-                                <h5 class="card-title">#12 Aliyana Escalera</h5>
-                                <p class="card-text text-muted">Attack</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100 text-center player-card pt-4">
-                            <img src="https://placehold.co/200x200/860038/fdba31?text=Sophomore" alt="Sophomore">
-                            <div class="card-body">
-                                <h5 class="card-title">#13 Piper Agee</h5>
-                                <p class="card-text text-muted">Defense</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100 text-center player-card pt-4">
                             <img src="https://placehold.co/200x200/860038/fdba31?text=Freshman" alt="Freshman">
                             <div class="card-body">
                                 <h5 class="card-title">#15 Emma Garcia-Lopez</h5>
                                 <p class="card-text text-muted">Attack</p>
-                            </div>
-                        </div>
-                    </div>
-<!--
-                    <div class="col">
-                        <div class="card h-100 text-center player-card pt-4">
-                            <img src="https://placehold.co/200x200/860038/fdba31?text=Sophomore" alt="Sophomore">
-                            <div class="card-body">
-                                <h5 class="card-title">#17 Sariyah Cazessus</h5>
-                                <p class="card-text text-muted">Attack</p>
-                            </div>
-                        </div>
-                    </div>
--->
-                    <div class="col">
-                        <div class="card h-100 text-center player-card pt-4">
-                            <img src="https://placehold.co/200x200/860038/fdba31?text=Sophomore" alt="Sophomore">
-                            <div class="card-body">
-                                <h5 class="card-title">#18 Taylor Goo</h5>
-                                <p class="card-text text-muted">Attack</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100 text-center player-card pt-4">
-                            <img src="https://placehold.co/200x200/860038/fdba31?text=Junior" alt="Junior">
-                            <div class="card-body">
-                                <h5 class="card-title">#23 Melanie Rodriguez</h5>
-                                <p class="card-text text-muted">Defense</p>
                             </div>
                         </div>
                     </div>
@@ -878,28 +856,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="card h-100 text-center player-card pt-4">
-                            <img src="https://placehold.co/200x200/860038/fdba31?text=Junior" alt="Junior">
-                            <div class="card-body">
-                                <h5 class="card-title">#27 Olivia Pachon</h5>
-                                <p class="card-text text-muted">Goalie</p>
-                            </div>
-                        </div>
-                    </div>
-<!--
-                    <div class="col">
-                        <div class="card h-100 text-center player-card pt-4">
-                            <img src="https://placehold.co/200x200/860038/fdba31?text=Senior" alt="Senior">
-                            <div class="card-body">
-                                <h5 class="card-title">#28 Farida Abbis</h5>
-                                <p class="card-text text-muted">Goalie</p>
-                            </div>
-                        </div>
-                    </div>
--->
-                    
-                    
                 </div>
             </div>
         </section>
