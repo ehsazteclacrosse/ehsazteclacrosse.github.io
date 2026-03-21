@@ -112,8 +112,15 @@
         .badge.bg-danger-subtle { background-color: #f1e4e8 !important; color: var(--primary-color) !important; border: 1px solid #c6a2b3 !important; }
 
         #schedule .modal-body td {
-            white-space: normal; /* This is the "Magic Switch" for wrapping */
+            white-space: normal;
             word-break: normal;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            /* This is the magic line. It creates a global offset 
+            specifically for internal links. */
+            scroll-padding-top: 250px; 
         }
 
         /* --- Roster/Coaches --- */
@@ -693,6 +700,29 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+    <script>
+        document.addEventListener('click', function (event) {
+            const navbar = document.getElementById('navbarNav');
+            const toggler = document.querySelector('.navbar-toggler');
+            
+            if (navbar && navbar.classList.contains('show')) {
+                const clickedOutside = !navbar.contains(event.target) && !toggler.contains(event.target);
+                if (clickedOutside) {
+                    new bootstrap.Collapse(navbar).hide();
+                }
+            }
+        });
+
+        // Close when a link is clicked (crucial for one-page sites)
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const navbar = document.getElementById('navbarNav');
+                if (navbar.classList.contains('show')) {
+                    new bootstrap.Collapse(navbar).hide();
+                }
+            });
+        });
+    </script>
 
     <div class="modal fade" id="schedule2025Modal" tabindex="-1" aria-labelledby="schedule2025ModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
