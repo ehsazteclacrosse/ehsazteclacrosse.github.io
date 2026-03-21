@@ -116,18 +116,6 @@
             word-break: normal;
         }
 
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 250px; 
-        }
-
-        .anchor {
-            display: block;
-            position: relative;
-            top: -100px; /* This matches your navbar height + some breathing room */
-            visibility: hidden;
-        }
-
         /* --- Roster/Coaches --- */
         .player-card img, .coach-card img {
             width: 120px; height: 120px; object-fit: cover;
@@ -720,13 +708,37 @@
 
         // Close when a link is clicked (crucial for one-page sites)
         document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
+            link.addEventListener('click', function(e) {
                 const navbar = document.getElementById('navbarNav');
-                if (navbar.classList.contains('show')) {
-                    new bootstrap.Collapse(navbar).hide();
+                const targetId = this.getAttribute('href');
+
+                // Only run this logic for internal anchors (starting with #)
+                if (targetId.startsWith('#')) {
+                    if (navbar.classList.contains('show')) {
+                        // 1. Close the menu first
+                        const bsCollapse = bootstrap.Collapse.getInstance(navbar) || new bootstrap.Collapse(navbar);
+                        bsCollapse.hide();
+
+                        // 2. Prevent default jump, wait for menu to close, then scroll manually
+                        e.preventDefault();
+                        setTimeout(() => {
+                            const targetElement = document.querySelector(targetId);
+                            if (targetElement) {
+                                const offset = 100; // Adjust this to your navbar height
+                                const elementPosition = targetElement.getBoundingClientRect().top;
+                                const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+                                window.scrollTo({
+                                    top: offsetPosition,
+                                    behavior: "smooth"
+                                });
+                            }
+                        }, 350); // 350ms is the standard Bootstrap transition time
+                    }
                 }
             });
         });
+        
     </script>
 
     <div class="modal fade" id="schedule2025Modal" tabindex="-1" aria-labelledby="schedule2025ModalLabel" aria-hidden="true">
