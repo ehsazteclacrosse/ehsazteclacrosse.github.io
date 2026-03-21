@@ -111,6 +111,23 @@
         .badge.bg-success-subtle { background-color: #d4edda !important; color: #155724 !important; border: 1px solid #458B54 !important; }
         .badge.bg-danger-subtle { background-color: #f1e4e8 !important; color: var(--primary-color) !important; border: 1px solid #c6a2b3 !important; }
 
+        /* Prevents long opponent names from breaking the mobile layout */
+        #schedule td {
+            word-wrap: break-word;
+            white-space: normal;
+            font-size: 0.9rem; /* Slightly smaller text on mobile helps a lot */
+        }
+
+        @media (max-width: 576px) {
+            /* Hides the word "Watch" on tiny screens, leaving only the icon */
+            #schedule .btn-sm span {
+                display: none;
+            }
+            #schedule .ps-4 {
+                padding-left: 0.75rem !important; /* Reduces large left padding on mobile */
+            }
+        }
+
         /* --- Roster/Coaches --- */
         .player-card img, .coach-card img {
             width: 120px; height: 120px; object-fit: cover;
@@ -209,13 +226,13 @@
                 <h2 class="section-title text-center">2026 Team Schedule</h2>
                 <div class="card overflow-hidden shadow-sm border-0" style="border-radius: 1rem;">
                     <div class="table-responsive">
-                        <table class="table table-striped table-hover align-middle mb-0 w-100">
-                            <thead class="bg-maroon text-white">
-                                <tr>
-                                    <th scope="col" class="ps-4" style="min-width: 140px;">Date</th>
-                                    <th scope="col">Opponent</th>
-                                    <th scope="col" class="text-center">Result</th>
-                                    <th scope="col" class="text-center">Game Replay</th>
+                        <table class="table table-striped table-hover align-middle mb-0 w-100" style="table-layout: fixed;">
+                            <thead>
+                                <tr class="bg-maroon text-white">
+                                    <th scope="col" class="ps-4" style="width: 30%;">Date</th>
+                                    <th scope="col" style="width: 40%;">Opponent</th>
+                                    <th scope="col" class="text-center" style="width: 15%;">Result</th>
+                                    <th scope="col" class="text-center" style="width: 15%;">Replay</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -271,7 +288,7 @@
                                     <td class="ps-4 fw-bold">March 17, 2026</td>
                                     <td>@ El Dorado</td>
                                     <td class="text-center"><span class="badge fs-6 fw-semibold rounded-pill bg-danger-subtle">L 1-16</span></td>
-                                    <td class="text-center"><a href="https://youtu.be/kYwU3hX5h7o" target="_blank" class="btn btn-sm btn-youtube"><i class="bi bi-youtube me-1"></i> Watch</a></td>
+                                    <td class="text-center"><a href="#" target="_blank" class="btn btn-sm btn-youtube disabled"><i class="bi bi-youtube me-1"></i> Watch</a></td>
                                 </tr>
                                 <tr>
                                     <td class="ps-4 fw-bold">March 19, 2026</td>
