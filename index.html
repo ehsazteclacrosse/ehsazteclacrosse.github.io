@@ -124,6 +124,28 @@
         }
         .player-card, .coach-card { margin-top: 60px; }
 
+        /* --- Support Section --- */
+        /* Custom styling for the slide-down form */
+        #inquiryForm {
+            transition: all 0.4s ease-in-out;
+        }
+
+        #inquiryForm iframe {
+            border: none;
+            background: #fff;
+        }
+
+        /* Ensure buttons look clickable and active */
+        .btn-outline-accent {
+            border-width: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-accent:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
         /* --- Sponsors Section --- */
         .sponsor-logo-container {
             display: flex;
@@ -614,26 +636,52 @@
             <div class="container">
                 <h2 class="section-title text-center">Support the Aztecs!</h2>
                 <div class="text-center lead mb-5">Your support helps cover equipment, travel, and staffing.</div>
-                <div class="row justify-content-center row-cols-1 row-cols-md-2 g-4">
+                
+                <div class="row justify-content-center g-4">
                     <div class="col-lg-5">
-                        <div class="card h-100 p-4 text-center">
+                        <div class="card h-100 p-4 text-center border-0 shadow-sm">
                             <div class="card-body">
                                 <i class="bi bi-gift-fill fs-1 mb-3" style="color: var(--primary-color);"></i>
-                                <h5 class="card-title">Make a Donation</h5>
+                                <h5 class="card-title fw-bold">Make a Donation</h5>
                                 <p class="card-text">Every contribution, big or small, makes a huge difference for our players.</p>
-                                <a href="mailto:ehswomenslacrosse@gmail.com" class="btn btn-outline-accent">Inquire About Donations</a>
+                                <button class="btn btn-outline-accent px-4" type="button" data-bs-toggle="collapse" data-bs-target="#inquiryForm" aria-expanded="false" aria-controls="inquiryForm">
+                                    Inquire About Donations
+                                </button>
                             </div>
                         </div>
                     </div>
+
                     <div class="col-lg-5">
-                        <div class="card h-100 p-4 text-center">
+                        <div class="card h-100 p-4 text-center border-0 shadow-sm">
                             <div class="card-body">
                                 <i class="bi bi-people-fill fs-1 mb-3" style="color: var(--primary-color);"></i>
-                                <h5 class="card-title">Become a Sponsor</h5>
+                                <h5 class="card-title fw-bold">Become a Sponsor</h5>
                                 <p class="card-text">Promote your business while supporting student-athletes in our community.</p>
-                                <a href="mailto:ehswomenslacrosse@gmail.com" class="btn btn-outline-accent">Inquire About Sponsorship</a>
+                                
+                                <button class="btn btn-outline-accent px-4 mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#inquiryForm" aria-expanded="false" aria-controls="inquiryForm">
+                                    Inquire About Sponsorship
+                                </button>
+
+                                <div class="mt-2">
+                                    <a href="Team_Player_Sponsorship_form.pdf" target="_blank" class="text-decoration-none fw-semibold medium" style="color: var(--primary-color);">
+                                        <i class="bi bi-file-earmark-pdf me-1"></i> Download Sponsorship Form (PDF)
+                                    </a>
+                                </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <div class="collapse mt-5" id="inquiryForm">
+                    <div class="card card-body border-0 shadow-lg p-0 overflow-hidden" style="border-radius: 1.5rem; height: 700px;">
+                        <div class="bg-maroon p-3 text-white d-flex justify-content-between align-items-center">
+                            <span class="fw-bold ms-2">Official Aztec Inquiry Form</span>
+                            <button type="button" class="btn-close btn-close-white" data-bs-toggle="collapse" data-bs-target="#inquiryForm" aria-label="Close"></button>
+                        </div>
+                        <iframe src="https://forms.gle/WnZViqyWZtSuacQq7?embedded=true" 
+                                width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">
+                                Loading…
+                        </iframe>
                     </div>
                 </div>
             </div>
